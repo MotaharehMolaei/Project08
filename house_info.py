@@ -1,14 +1,11 @@
 from tkinter import *
 import tkinter.ttk as ttk
-from tkinter import *
-import tkinter.ttk as ttk
 import tkinter.messagebox as msg
 from file_manager import *
 from validator import *
 
 # TODO line 9 has error
 house_list = read_from_file("houses.dat")
-
 
 def load_data(house_list):
     house_list = read_from_file("houses.dat")

@@ -4,7 +4,7 @@ import tkinter.messagebox as msg
 from file_manager import *
 from validator import *
 
-# TODO line 9 has error
+# TODO line 8 has error
 house_list = read_from_file("houses.dat")
 
 def load_data(house_list):

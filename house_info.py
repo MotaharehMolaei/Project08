@@ -1,5 +1,69 @@
 from tkinter import *
 import tkinter.ttk as ttk
+from tkinter import *
+import tkinter.ttk as ttk
+import tkinter.messagebox as msg
+from file_manager import *
+from validator import *
+
+# TODO line 9 has error
+house_list = read_from_file("houses.dat")
+
+
+def load_data(house_list):
+    house_list = read_from_file("houses.dat")
+    for row in table.get_children():
+        table.delete(row)
+
+    for house in house_list:
+        table.insert("", END, values=house)
+
+def reset_form():
+    id.set(len(house_list) + 1)
+    address.set("")
+    region.set("")
+    has_elevator.set(0)
+    has_parking.set(0)
+    has_storage.set(0)
+    rooms.set(1)
+    load_data(house_list)
+
+def save_btn_click():
+    house = (
+        id.get(),
+        address.get(),
+        region.get(),
+        bool(has_elevator.get()),
+        bool(has_parking.get()),
+        bool(has_storage.get()),
+        rooms.get()
+    )
+
+    errors = house_validator(house)
+    if errors:
+        msg.showerror("Validation Error", "\n".join(errors))
+    else:
+        house_list.append(house)
+        write_to_file("houses.dat", house_list)
+        msg.showinfo("Success", "House saved successfully.")
+        reset_form()
+
+def table_select(x):
+    selected = table.item(table.focus())["values"]
+    if selected:
+        id.set(selected[0])
+        address.set(selected[1])
+        region.set(selected[2])
+        has_elevator.set(1 if selected[3] else 0)
+        has_parking.set(1 if selected[4] else 0)
+        has_storage.set(1 if selected[5] else 0)
+        rooms.set(selected[6])
+
+def edit_btn_click():
+    pass
+
+def remove_btn_click():
+    pass
 
 window = Tk()
 window.title("House Info")

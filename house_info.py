@@ -82,18 +82,21 @@ Label(window, text="Region").place(x=20, y=100)
 region = StringVar()
 Entry(window, textvariable=region).place(x=100, y=100)
 
+# Rooms
+Label(window, text="Rooms").place(x=20, y=140)
+rooms = IntVar(value=1)
+Entry(window, textvariable=rooms).place(x=100, y=140)
+
+
 # Checkboxes
 has_elevator = IntVar()
-Checkbutton(window, text="Elevator", variable=has_elevator).place(x=100, y=140)
+Checkbutton(window, text="Elevator", variable=has_elevator).place(x=100, y=180)
 has_parking = IntVar()
-Checkbutton(window, text="Parking", variable=has_parking).place(x=180, y=140)
+Checkbutton(window, text="Parking", variable=has_parking).place(x=180, y=180)
 has_storage = IntVar()
-Checkbutton(window, text="Storage", variable=has_storage).place(x=260, y=140)
+Checkbutton(window, text="Storage", variable=has_storage).place(x=260, y=180)
 
-# Rooms
-Label(window, text="Rooms").place(x=20, y=180)
-rooms = IntVar(value=1)
-Entry(window, textvariable=rooms).place(x=100, y=180)
+
 
 # Table
 table = ttk.Treeview(window, columns=[1,2,3,4,5,6,7], show="headings")
@@ -116,8 +119,10 @@ table.column(7, width=100)
 table.bind("<<TreeviewSelect>>", table_select)
 table.place(x=330, y=20)
 
-Button(window, text="Save", width=10, command=save_btn_click).place(x=20, y=250)
-Button(window, text="Clear", width=10, command=edit_btn_click).place(x=140, y=250)
-Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=220)
-Button(window, text="Clear", width=6, command=reset_form).place(x=20, y=180, width=190)
+Button(window, text="Save", width=6, command=save_btn_click).place(x=20, y=230)
+Button(window, text="Edit", width=6, command=edit_btn_click).place(x=90, y=230)
+Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=230)
+Button(window, text="Clear", width=6, command=reset_form).place(x=20, y=270, width=190)
+
+reset_form()
 window.mainloop()

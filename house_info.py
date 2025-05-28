@@ -13,7 +13,16 @@ def load_data(house_list):
         table.delete(row)
 
     for house in house_list:
-        table.insert("", END, values=house)
+        visual_house = (
+            house[0],
+            house[1],
+            house[2],
+            "✓" if house[3] else "",
+            "✓" if house[4] else "",
+            "✓" if house[5] else "",
+            house[6]
+        )
+        table.insert("", END, values=visual_house)
 
 def reset_form():
     id.set(len(house_list) + 1)
@@ -75,7 +84,7 @@ Entry(window, textvariable=id, state="readonly").place(x=100, y=20)
 # Address
 Label(window, text="Address").place(x=20, y=60)
 address = StringVar()
-Entry(window, textvariable=address, width=30).place(x=100, y=60)
+Entry(window, textvariable=address).place(x=100, y=60)
 
 # Region
 Label(window, text="Region").place(x=20, y=100)
@@ -89,40 +98,41 @@ Entry(window, textvariable=rooms).place(x=100, y=140)
 
 
 # Checkboxes
+Label(window, text="Options").place(x=20, y=180)
 has_elevator = IntVar()
 Checkbutton(window, text="Elevator", variable=has_elevator).place(x=100, y=180)
 has_parking = IntVar()
-Checkbutton(window, text="Parking", variable=has_parking).place(x=180, y=180)
+Checkbutton(window, text="Parking", variable=has_parking).place(x=100, y=200)
 has_storage = IntVar()
-Checkbutton(window, text="Storage", variable=has_storage).place(x=260, y=180)
+Checkbutton(window, text="Storage", variable=has_storage).place(x=100, y=220)
 
 
 
 # Table
 table = ttk.Treeview(window, columns=[1,2,3,4,5,6,7], show="headings")
-table.heading(1, text="Id")
-table.heading(2, text="Address")
-table.heading(3, text="Region")
-table.heading(4, text="Elevator")
-table.heading(5, text="Parking")
-table.heading(6, text="Storage")
-table.heading(7, text="Rooms")
+table.heading(1, text="Id", anchor="center")
+table.heading(2, text="Address", anchor="center")
+table.heading(3, text="Region", anchor="center")
+table.heading(4, text="Elevator", anchor="center")
+table.heading(5, text="Parking", anchor="center")
+table.heading(6, text="Storage", anchor="center")
+table.heading(7, text="Rooms", anchor="center")
 
-table.column(1, width=60)
-table.column(2, width=100)
-table.column(3, width=100)
-table.column(4, width=100)
-table.column(5, width=100)
-table.column(6, width=100)
-table.column(7, width=100)
+table.column(1, width=60, anchor="center")
+table.column(2, width=150, anchor="center")
+table.column(3, width=100, anchor="center")
+table.column(4, width=100, anchor="center")
+table.column(5, width=100, anchor="center")
+table.column(6, width=100, anchor="center")
+table.column(7, width=100, anchor="center")
 
 table.bind("<<TreeviewSelect>>", table_select)
-table.place(x=330, y=20)
+table.place(x=310, y=20, height=310)
 
-Button(window, text="Save", width=6, command=save_btn_click).place(x=20, y=230)
-Button(window, text="Edit", width=6, command=edit_btn_click).place(x=90, y=230)
-Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=230)
-Button(window, text="Clear", width=6, command=reset_form).place(x=20, y=270, width=190)
+Button(window, text="Save", width=6, command=save_btn_click,bg="lightblue", fg="black").place(x=40, y=260)
+Button(window, text="Edit", width=6, command=edit_btn_click,bg="lightblue", fg="black").place(x=120, y=260)
+Button(window, text="Remove", width=6, command=remove_btn_click,bg="lightblue", fg="black").place(x=200, y=260)
+Button(window, text="Clear", width=6, command=reset_form,bg="lightblue", fg="black").place(x=40, y=300, width=214)
 
 reset_form()
 window.mainloop()

@@ -138,4 +138,3 @@ Button(window, text="Clear", width=6, command=reset_form,bg="lightblue", fg="bla
 
 reset_form()
 window.mainloop()
-

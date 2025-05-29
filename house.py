@@ -1,4 +1,3 @@
-from validator import Validator
 class House:
     def __init__(self, id, address, region, has_elevator, has_parking, has_storage, rooms):
         self.id = id
@@ -10,12 +9,7 @@ class House:
         self.rooms = rooms
 
 
-    def to_list(self):
-        house_lists = [self.id, self.address, self.region, self.has_elevator, self.has_parking,self.has_storage, self.rooms]
-        return house_lists
-
-    def validate(self):
-        validator = Validator.house_validator(self.to_list())
-        return validator
+    def save_house(self):
+        print(f"{self.id},{self.address}, {self.region}, {self.has_elevator}, {self.has_parking}")
 
 house1 = House(1,"Alte Strasse 89", "Frankfurt", "yes", "yes", "yes", 2)

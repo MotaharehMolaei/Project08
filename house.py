@@ -18,4 +18,4 @@ class House:
         validator = Validator.house_validator(self.to_list())
         return validator
 
-
+house1 = House(1,"Alte Strasse 89", "Frankfurt", "yes", "yes", "yes", 2)

@@ -3,6 +3,7 @@ import tkinter.ttk as ttk
 import tkinter.messagebox as msg
 from file_manager import *
 from validator import *
+from house import House
 
 # TODO line 8 has error
 house_list = read_from_file("houses.dat")
@@ -35,7 +36,7 @@ def reset_form():
     load_data(house_list)
 
 def save_btn_click():
-    house = (
+    house = House(
         id.get(),
         address.get(),
         region.get(),
@@ -45,7 +46,8 @@ def save_btn_click():
         rooms.get()
     )
 
-    errors = house_validator(house)
+    errors = house_validator()
+
     if errors:
         msg.showerror("Validation Error", "\n".join(errors))
     else:

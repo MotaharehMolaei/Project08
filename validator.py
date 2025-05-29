@@ -6,7 +6,6 @@ def address_validator(address):
 
 # (id[0], address[1], region[2], has_elevator[3], has_parking[4], has_storage[5], rooms[6])
 def house_validator(house):
-
     errors = []
 
     # Validate ID

@@ -10,6 +10,6 @@ class House:
 
 
     def save_house(self):
-        print(f"{self.id},{self.address}, {self.region}, {self.has_elevator}, {self.has_parking}")
+        print(f"{self.id},{self.address}, {self.region}, {self.has_elevator}, {self.has_parking}, {self.has_storage}, {self.rooms}")
 
 house1 = House(1,"Alte Strasse 89", "Frankfurt", "yes", "yes", "yes", 2)

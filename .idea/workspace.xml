@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c22e2b37-e262-4196-8db9-17c43c037fbc" name="Changes" comment="Build a class">
       <change beforePath="$PROJECT_DIR$/house.py" beforeDir="false" afterPath="$PROJECT_DIR$/house.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/house_info.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/validator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +32,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/MotaharehMolaei/Project08",
-    "accountId": "de02b894-d967-4ff1-823d-2ebc26e92bb6"
+    "url": "http://github.com/MotaharehMolaei/Project08",
+    "accountId": "33f13531-dc82-4aeb-bba4-83ff4e49a1e8"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -43,25 +44,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.file_manager.executor": "Run",
-    "Python.house.executor": "Run",
-    "Python.house_info.executor": "Run",
-    "Python.validator.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.file_manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.house.executor&quot;: &quot;Run&quot;,
+    &quot;Python.house_info.executor&quot;: &quot;Run&quot;,
+    &quot;Python.validator.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -78,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1747919634736</updated>
       <workItem from="1748512739183" duration="5226000" />
+      <workItem from="1748531116400" duration="319000" />
     </task>
     <task id="LOCAL-00001" summary="changed size">
       <option name="closed" value="true" />

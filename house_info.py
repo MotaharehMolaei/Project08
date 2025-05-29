@@ -2,7 +2,7 @@ from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
 from file_manager import *
-from validator import *
+from house import House
 
 # TODO line 8 has error
 house_list = read_from_file("houses.dat")
@@ -13,16 +13,7 @@ def load_data(house_list):
         table.delete(row)
 
     for house in house_list:
-        visual_house = (
-            house[0],
-            house[1],
-            house[2],
-            "✓" if house[3] else "",
-            "✓" if house[4] else "",
-            "✓" if house[5] else "",
-            house[6]
-        )
-        table.insert("", END, values=visual_house)
+        table.insert("", END, values=house.to_tuple())
 
 def reset_form():
     id.set(len(house_list) + 1)
@@ -35,7 +26,7 @@ def reset_form():
     load_data(house_list)
 
 def save_btn_click():
-    house = (
+    house = House(
         id.get(),
         address.get(),
         region.get(),
@@ -45,7 +36,7 @@ def save_btn_click():
         rooms.get()
     )
 
-    errors = house_validator(house)
+    errors = house.validate()
     if errors:
         msg.showerror("Validation Error", "\n".join(errors))
     else:
@@ -108,22 +99,16 @@ Checkbutton(window, text="Storage", variable=has_storage).place(x=100, y=220)
 
 
 # Table
-table = ttk.Treeview(window, columns=[1,2,3,4,5,6,7], show="headings")
+table = ttk.Treeview(window, columns=[1,2,3,4], show="headings")
 table.heading(1, text="Id", anchor="center")
 table.heading(2, text="Address", anchor="center")
 table.heading(3, text="Region", anchor="center")
-table.heading(4, text="Elevator", anchor="center")
-table.heading(5, text="Parking", anchor="center")
-table.heading(6, text="Storage", anchor="center")
-table.heading(7, text="Rooms", anchor="center")
+table.heading(4, text="Rooms", anchor="center")
 
 table.column(1, width=60, anchor="center")
 table.column(2, width=150, anchor="center")
 table.column(3, width=100, anchor="center")
 table.column(4, width=100, anchor="center")
-table.column(5, width=100, anchor="center")
-table.column(6, width=100, anchor="center")
-table.column(7, width=100, anchor="center")
 
 table.bind("<<TreeviewSelect>>", table_select)
 table.place(x=310, y=20, height=310)

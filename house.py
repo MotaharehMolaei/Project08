@@ -1,4 +1,3 @@
-from validator import Validator
 
 class House:
     def __init__(self, id, address, region, has_elevator, has_parking, has_storage, rooms):
@@ -12,9 +11,10 @@ class House:
 
 
     def to_list(self):
-        return [self.id, self.address, self.region, self.has_elevator, self.has_parking,self.has_storage, self.rooms]
-
+        house_lists = [self.id, self.address, self.region, self.has_elevator, self.has_parking,self.has_storage, self.rooms]
+        return house_lists
 
     def validate(self):
-        validator = Validator.house_validator(self.to_list())
+        validator =house_validator(self.to_list())
         return validator
+

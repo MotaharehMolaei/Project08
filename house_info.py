@@ -96,14 +96,13 @@ Label(window, text="Rooms").place(x=20, y=140)
 rooms = IntVar(value=1)
 Entry(window, textvariable=rooms).place(x=100, y=140)
 
-
 # Checkboxes
 Label(window, text="Options").place(x=20, y=180)
-has_elevator = IntVar()
+has_elevator = BooleanVar()
 Checkbutton(window, text="Elevator", variable=has_elevator).place(x=100, y=180)
-has_parking = IntVar()
+has_parking = BooleanVar()
 Checkbutton(window, text="Parking", variable=has_parking).place(x=100, y=200)
-has_storage = IntVar()
+has_storage = BooleanVar()
 Checkbutton(window, text="Storage", variable=has_storage).place(x=100, y=220)
 
 
